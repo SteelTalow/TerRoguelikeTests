@@ -141,6 +141,17 @@ Projectiles: {
 }
 
 Items: {
+
+	CuteDoll: {
+		DisplayName: Cute Doll
+		Tooltip:
+		'''
+		5% increased firerate
+		10% diminishing DR
+		Extra copies of this item increase firerate by 5% and diminishing DR by 5%
+		'''
+	}
+	
 	ClingyGrenade: {
 		DisplayName: Clingy Grenade
 		Tooltip:

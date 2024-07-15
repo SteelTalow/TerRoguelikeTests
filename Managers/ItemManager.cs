@@ -225,6 +225,8 @@ namespace TerRoguelike.Managers
         {
             AllItems = new List<BaseRoguelikeItem>()
             {
+                new CuteDoll(),
+                
                 new ClingyGrenade(),
                 new PocketSpotter(),
                 new CoolantBarrel(),

@@ -48,6 +48,9 @@ namespace TerRoguelike.TerPlayer
         public static readonly SoundStyle PrimevalBoost = new SoundStyle("TerRoguelike/Sounds/PrimevalBoost");
 
         #region Item Variables
+
+        public int cuteDoll;
+        
         public int coolantBarrel;
         public int clingyGrenade;
         public int pocketSpotter;
@@ -222,6 +225,8 @@ namespace TerRoguelike.TerPlayer
         {
             startDirection = Player.direction;
 
+            cuteDoll = 0;
+            
             coolantBarrel = 0;
             clingyGrenade = 0;
             pocketSpotter = 0;
@@ -509,6 +514,16 @@ namespace TerRoguelike.TerPlayer
                 return;
 
             //everything else
+
+            if (cuteDoll > 0)
+            {
+                float attackSpeedIncrease = cuteDoll * 0.05f;
+                player.GetAttackSpeed(DamageClass.Generic) += attackSpeedIncrease;
+
+                float drIncrease = ((cuteDoll - 1) * 5f ) + 10;
+                diminishingDR += drIncrease;
+            }
+            
             if (coolantBarrel > 0)
             {
                 float attackSpeedIncrease = coolantBarrel * 0.10f;
